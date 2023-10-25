@@ -2,10 +2,10 @@
 paper: few-shot intent detection with self-supervised multi-task per-training and prototype-aware attention
 
 ## Dataset
-Clinic150, Banking77, Hwu64, Liu57
+Clinic150 <br/> Banking77 <br/> Hwu64 <br/> Liu57
 
 ## Train
-1 run SMTP
+1 run SMTP  <br/>
 2 run PaAT
 
 ## requirements
