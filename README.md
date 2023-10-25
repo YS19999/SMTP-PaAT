@@ -1,5 +1,5 @@
 # SMTP-PaAT
-paper: few-shot intent detection with self-supervised multi-task per-training and prototype-aware attention
+paper: **_few-shot intent detection with self-supervised multi-task per-training and prototype-aware attention_**
 
 ## Dataset
 Clinic150 <br/> Banking77 <br/> Hwu64 <br/> Liu57
