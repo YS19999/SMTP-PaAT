@@ -2,7 +2,7 @@ import argparse
 
 from transformers import BertTokenizer
 
-from dataset.mtp_loader import loader_dataset
+from dataset.smtp_loader import loader_dataset
 from smtp_trainer import SMTP
 
 def parse_args():
