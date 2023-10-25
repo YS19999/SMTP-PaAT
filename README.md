@@ -1,2 +1,2 @@
 # SMTP-PaAT
-self-supervised multi-task per-training and prototype-aware attention
+paper: few-shot intent detection with self-supervised multi-task per-training and prototype-aware attention
