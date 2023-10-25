@@ -13,11 +13,10 @@ import embedding.factory as ebd
 import classifier.factory as clf
 import dataset.loader as loader
 import train.factory as train_utils
-from tools.visual_featuespace import main_feature
 
 def parse_args():
     parser = argparse.ArgumentParser(
-            description="prototypical-aware attention for few-shot intent detection")
+            description="prototypical-aware attention")
 
     # data configuration
     parser.add_argument("--data_path", type=str,
