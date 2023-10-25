@@ -95,11 +95,6 @@ class ParallelSampler():
             query = utils.select_subset(self.data, {}, ['text', 'text_len', 'attn_mask', 'label'],
                                         query_idx, max_query_len)
 
-            # support = utils.select_subset(self.data, {}, ['text', 'text_len', 'label'],
-            #                               support_idx, max_support_len)
-            # query = utils.select_subset(self.data, {}, ['text', 'text_len', 'label'],
-            #                             query_idx, max_query_len)
-
             if 'pos' in self.args.auxiliary:
                 support = utils.select_subset(self.data, support, ['head', 'tail'], support_idx)
                 query = utils.select_subset(self.data, query, ['head', 'tail'], query_idx)
