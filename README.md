@@ -9,7 +9,7 @@ Clinic150, Banking77, Hwu64, Liu57
 2 run PaAT
 
 ## requirements
-pytorch==1.12.1
-python==3.7
-transformers==4.22.1
-numpy==1.21.5
+pytorch==1.12.1 <br/>
+python==3.7 <br/>
+transformers==4.22.1 <br/>
+numpy==1.21.5 <br/>
