@@ -49,8 +49,7 @@ class ProtoMulHeadAttn(nn.Module):
 
         self.output = nn.Sequential(
             nn.Dropout(0.1),
-            nn.Linear(dim, dim),
-            nn.GELU()
+            nn.Linear(dim, dim)
         )
 
     def forward(self, x, flag='XQ', mask=None):
@@ -89,7 +88,7 @@ class ProtoMulHeadAttn(nn.Module):
 
             attn_out1 = self.norm(attn_out1)
             attn_out2 = self.norm(attn_out2)
-
+            # attn_out = torch.cat([attn_out1, attn_out2], dim=-1) # [way, shot, 2h]
 
             attn_out = (attn_out1 + attn_out2) / 2
 
@@ -151,19 +150,18 @@ class ProtoAttn(BASE):
         XS = XS[indices]
 
         proto = self.model(XS, flag='XS')
-        # XS = self.dropout(XS)
-        # proto1 = self.model(XS, flag='XS')
-        # norm_loss1 = self.cl_norm(proto, proto1)
+        XS = self.dropout(XS)
+        proto1 = self.model(XS, flag='XS')
+        norm_loss1 = self.cl_norm(proto, proto1)
 
         XQ1 = self.model(XQ)
-        # XQ2 = self.dropout(XQ)
-        # XQ2 = self.model(XQ2)
-        # norm_loss2 = self.cl_norm(XQ1, XQ2)
+        XQ2 = self.dropout(XQ)
+        XQ2 = self.model(XQ2)
+        norm_loss2 = self.cl_norm(XQ1, XQ2)
 
         pred = F.cosine_similarity(proto.unsqueeze(0), XQ1.unsqueeze(1), dim=-1) * 10
 
-        # loss = F.cross_entropy(pred, YQ) + norm_loss1 + norm_loss2
-        loss = F.cross_entropy(pred, YQ)
+        loss = F.cross_entropy(pred, YQ) + norm_loss1 + norm_loss2
 
         acc = BASE.compute_acc(pred, YQ)
 
