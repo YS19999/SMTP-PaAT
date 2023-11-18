@@ -5,8 +5,8 @@ paper: **_few-shot intent detection with self-supervised multi-task per-training
 Clinic150 <br/> Banking77 <br/> Hwu64 <br/> Liu57
 
 ## Train
-1 run SMTP  <br/>
-2 run PaAT
+1 run SMTP/main.py  <br/>
+2 run PaAT/main.py
 
 ## requirements
 pytorch==1.12.1 <br/>
