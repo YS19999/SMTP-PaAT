@@ -2,7 +2,7 @@
 paper: **_few-shot intent detection with self-supervised pertraining and prototype-aware attention_** (under review by Pattern Recognition)
 
 ## Intent Dataset
-Clinic150 <br/> Banking77 <br/> Hwu64 <br/> Liu57
+1 Clinic150; 2 Banking77; 3 Hwu64; 4 Liu57. Click <a name='here'></a> download dataset.
 
 ## Train
 1 run SMTP/main.py  <br/>
